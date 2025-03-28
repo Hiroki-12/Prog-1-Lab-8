@@ -74,4 +74,48 @@ public class CommentTest
         
         assertEquals(false, salesIte1.addComment("Adam", "Second", 6));
     }
+    
+    /**
+     * 
+     */
+    @Test
+    public void testAuthorCreation()
+    {
+        Comment comment1= new Comment("Author", "Comment", 2);
+        
+        assertEquals("Author", comment1.getAuthor());
+    }
+    
+    /**
+     * 
+     */
+    @Test
+    public void testRatingCreation()
+    {
+        Comment comment1= new Comment("Author", "Comment", 0);
+        
+        assertEquals(0, comment1.getRating());
+    }
+    
+    /**
+     * 
+     */
+    @Test
+    public void testUpVote()
+    {
+        Comment comment1= new Comment("Author", "Comment", 3);
+        comment1.upvote();
+        assertEquals(1, comment1.getVoteCount());
+    }
+    
+    /**
+     * 
+     */
+    @Test
+    public void testDownVote()
+    {
+        Comment comment1= new Comment("Author", "Comment", 3);
+        comment1.downvote();
+        assertEquals(-1, comment1.getVoteCount());
+    }
 }   
