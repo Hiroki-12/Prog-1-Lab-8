@@ -76,7 +76,18 @@ public class SalesItemTest
         SalesItem salesIte1 = new SalesItem("Brain Surgery for Dummies.", 9899);
         assertEquals(true, salesIte1.addComment("Fred", "Great - I perform brain surgery every week now!", 4));
     }
+    
+    /**
+     * 
+     */
+    @Test
+    public void testFindMostHelpfulComment()
+    {
+        SalesItem salesIte1 = new SalesItem("Title", 200);
+        salesIte1.addComment("1", "Comment", 1);
+        salesIte1.addComment("2", "Comment", 3);
+        salesIte1.addComment("3", "Comment", 5);
+        
+        assertEquals(true, salesIte1.findMostHelpfulComment());
+    }
 }
-
-
-
